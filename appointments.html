@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointments | Garage UI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#f8f9fa] text-gray-800 font-sans min-h-screen flex selection:bg-green-200">
+
+  <!-- Left Sidebar -->
+  <aside class="w-64 bg-white px-5 py-8 flex flex-col h-screen overflow-y-auto shrink-0 border-r border-gray-100">
+    <!-- Logo -->
+    <div class="mb-10 px-2">
+      <div class="text-xl font-bold italic flex items-center mb-2">
+        <div class="bg-gray-800 text-green-400 px-3 py-1 font-black">Karr</div>
+        <div class="bg-green-500 text-white px-3 py-1 font-black">Kraft</div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex-1 space-y-3">
+      <a href="index.html" class="flex items-center gap-4 text-gray-500 hover:bg-gray-50 px-4 py-3 rounded-xl font-medium transition-colors border border-transparent hover:border-gray-100">
+        <!-- Dashboard Icon -->
+        <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 8a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zm6-8a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zm0 8a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+        Dashboard
+      </a>
+      <a href="#" class="flex items-center gap-4 text-gray-500 hover:bg-gray-50 px-4 py-3 rounded-xl font-medium transition-colors border border-transparent hover:border-gray-100">
+        <!-- Inventory Icon -->
+        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+        Inventory
+      </a>
+      <a href="#" class="flex items-center gap-4 text-gray-500 hover:bg-gray-50 px-4 py-3 rounded-xl font-medium transition-colors border border-transparent hover:border-gray-100">
+        <!-- Repair Tracker Icon -->
+        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+        Repair tracker
+      </a>
+      <a href="customers.html" class="flex items-center gap-4 text-gray-500 hover:bg-gray-50 px-4 py-3 rounded-xl font-medium transition-colors border border-transparent hover:border-gray-100">
+        <!-- Customers Icon -->
+        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+        Customers
+      </a>
+      <!-- Active Appointments Menu Item -->
+      <a href="#" class="flex items-center gap-4 bg-green-500 text-white px-4 py-3 rounded-xl font-semibold shadow-lg shadow-green-500/30">
+        <!-- Appointments Icon -->
+        <svg class="w-5 h-5 opacity-90 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+        Appointments
+      </a>
+      <a href="#" class="flex items-center gap-4 text-gray-500 hover:bg-gray-50 px-4 py-3 rounded-xl font-medium transition-colors border border-transparent hover:border-gray-100">
+        <!-- Staff Management Icon -->
+        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+        Staff Management
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="flex-1 overflow-y-auto px-8 py-8 h-screen relative">
+    
+    <!-- Top Navigation -->
+    <header class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+      <div>
+        <h1 class="text-2xl font-bold text-gray-800">Appointments</h1>
+        <p class="text-sm text-gray-400 mt-1">Manage your schedule and bookings</p>
+      </div>
+
+      <!-- Top Controls -->
+      <div class="flex items-center gap-4">
+        <!-- Date Range Picker Placeholder -->
+        <div class="flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-xl text-sm font-semibold text-gray-600 shadow-sm cursor-pointer hover:bg-gray-50 transition">
+          <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+          <span>Oct 12, 2026 - Oct 18, 2026</span>
+        </div>
+
+        <!-- Create Appointment CTA -->
+        <button class="bg-green-500 hover:bg-green-600 text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-[0_4px_14px_0_rgba(34,197,94,0.39)] transition flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16m8-8H4"></path></svg>
+          Create Appointment
+        </button>
+      </div>
+    </header>
+
+    <!-- Content Area: Two Columns -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      
+      <!-- Left: fullCalendar Placeholder -->
+      <div class="lg:col-span-2 bg-white rounded-2xl p-6 shadow-sm shadow-gray-200 border border-gray-100 flex flex-col min-h-[600px]">
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="text-lg font-bold text-gray-800">Calendar View</h3>
+          <div class="flex items-center gap-2">
+            <button class="p-1.5 text-gray-400 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>
+            <span class="text-sm font-bold text-gray-800 w-32 text-center">October 2026</span>
+            <button class="p-1.5 text-gray-400 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>
+          </div>
+          <div class="flex bg-gray-50 rounded-xl p-1 border border-gray-100">
+            <button class="px-4 py-1.5 text-xs font-bold bg-white shadow-sm rounded-lg text-gray-800">Month</button>
+            <button class="px-4 py-1.5 text-xs font-bold text-gray-500 hover:text-gray-800">Week</button>
+            <button class="px-4 py-1.5 text-xs font-bold text-gray-500 hover:text-gray-800">Day</button>
+          </div>
+        </div>
+        
+        <!-- SVG Calendar grid placeholder -->
+        <div class="flex-1 border border-gray-100 rounded-xl overflow-hidden flex items-center justify-center bg-gray-50/50 relative">
+            <svg class="absolute inset-0 w-full h-full text-gray-200" preserveAspectRatio="none">
+              <defs>
+                <pattern id="grid" width="14.28%" height="20%" patternUnits="userSpaceOnUse">
+                  <path d="M 0 0 L 0 500" fill="none" stroke="currentColor" stroke-width="1"></path>
+                  <path d="M 0 0 L 800 0" fill="none" stroke="currentColor" stroke-width="1"></path>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid)" />
+              
+              <!-- Placeholder Events -->
+              <!-- Event 1 -->
+              <rect x="14.5%" y="22%" width="13.5%" height="30" rx="4" fill="#22c55e" opacity="0.9" />
+              <text x="15.5%" y="26%" fill="white" font-size="11" font-weight="bold" font-family="sans-serif">Transmission</text>
+              
+              <!-- Event 2 -->
+              <rect x="43%" y="42%" width="27.5%" height="30" rx="4" fill="#3b82f6" opacity="0.9" />
+              <text x="44%" y="46%" fill="white" font-size="11" font-weight="bold" font-family="sans-serif">Standard Maintenance</text>
+              
+              <!-- Event 3 -->
+              <rect x="71.5%" y="62%" width="13.5%" height="30" rx="4" fill="#eab308" opacity="0.9" />
+              <text x="72.5%" y="66%" fill="white" font-size="11" font-weight="bold" font-family="sans-serif">Oil & Filter</text>
+            </svg>
+            
+            <!-- Day labels -->
+            <div class="absolute top-0 left-0 w-full flex border-b border-gray-200 bg-white/80">
+                <div class="flex-1 py-2 text-center text-xs font-bold text-gray-500 uppercase">Sun</div>
+                <div class="flex-1 py-2 text-center text-xs font-bold text-gray-500 uppercase">Mon</div>
+                <div class="flex-1 py-2 text-center text-xs font-bold text-gray-500 uppercase">Tue</div>
+                <div class="flex-1 py-2 text-center text-xs font-bold text-gray-500 uppercase">Wed</div>
+                <div class="flex-1 py-2 text-center text-xs font-bold text-gray-500 uppercase">Thu</div>
+                <div class="flex-1 py-2 text-center text-xs font-bold text-gray-500 uppercase">Fri</div>
+                <div class="flex-1 py-2 text-center text-xs font-bold text-gray-500 uppercase">Sat</div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Right: Upcoming Appointments List -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-bold text-gray-800 mb-4 px-1">Upcoming Appointments</h3>
+
+        <!-- Appointment Card 1 -->
+        <div class="bg-white rounded-2xl p-5 shadow-sm shadow-gray-100 border border-gray-100 hover:shadow-md transition">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs font-bold text-gray-500 bg-gray-50 border border-gray-100 px-2 py-1 rounded-lg">09:00 AM - 10:30 AM</span>
+            <span class="inline-block px-2.5 py-1 bg-yellow-50 text-yellow-600 rounded-lg text-[10px] font-bold border border-yellow-100">Pending</span>
+          </div>
+          <h4 class="font-bold text-gray-900 text-base mb-1">Standard Maintenance</h4>
+          <div class="flex items-center gap-2 mb-3">
+            <img src="https://i.pravatar.cc/150?img=12" class="w-6 h-6 rounded-full object-cover">
+            <p class="text-sm text-gray-600 font-semibold">Michael Ross</p>
+          </div>
+          <div class="flex items-center gap-2 text-xs text-gray-500 font-medium bg-gray-50 p-2.5 rounded-xl border border-gray-100">
+            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+            <span>2019 Toyota Camry • <span class="text-gray-400 uppercase">abc-1234</span></span>
+          </div>
+        </div>
+
+        <!-- Appointment Card 2 -->
+        <div class="bg-white rounded-2xl p-5 shadow-md shadow-green-100/50 border border-gray-100 hover:shadow-lg transition relative overflow-hidden">
+          <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-green-500"></div>
+          <div class="flex justify-between items-start mb-3 pl-2">
+            <span class="text-xs font-bold text-gray-500 bg-gray-50 border border-gray-100 px-2 py-1 rounded-lg">11:00 AM - 01:00 PM</span>
+            <span class="inline-block px-2.5 py-1 bg-green-50 text-green-600 rounded-lg text-[10px] font-bold border border-green-100">Confirmed</span>
+          </div>
+          <h4 class="font-bold text-gray-900 text-base mb-1 pl-2">Transmission Repair</h4>
+          <div class="flex items-center gap-2 mb-3 pl-2">
+            <img src="https://i.pravatar.cc/150?img=32" class="w-6 h-6 rounded-full object-cover">
+            <p class="text-sm text-gray-600 font-semibold">Sarah Jenkins</p>
+          </div>
+          <div class="flex items-center gap-2 text-xs text-gray-500 font-medium bg-gray-50 p-2.5 rounded-xl border border-gray-100 ml-2">
+            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+            <span>2021 Ford F-150 • <span class="text-gray-400 uppercase">xyz-9876</span></span>
+          </div>
+        </div>
+
+        <!-- Appointment Card 3 -->
+        <div class="bg-white rounded-2xl p-5 shadow-sm shadow-gray-100 border border-gray-100 hover:shadow-md transition">
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-xs font-bold text-gray-500 bg-gray-50 border border-gray-100 px-2 py-1 rounded-lg">02:30 PM - 03:00 PM</span>
+            <span class="inline-block px-2.5 py-1 bg-blue-50 text-blue-600 rounded-lg text-[10px] font-bold border border-blue-100">Arrived</span>
+          </div>
+          <h4 class="font-bold text-gray-900 text-base mb-1">Oil & Filter Change</h4>
+          <div class="flex items-center gap-2 mb-3">
+            <img src="https://i.pravatar.cc/150?img=44" class="w-6 h-6 rounded-full object-cover">
+            <p class="text-sm text-gray-600 font-semibold">David Miller</p>
+          </div>
+          <div class="flex items-center gap-2 text-xs text-gray-500 font-medium bg-gray-50 p-2.5 rounded-xl border border-gray-100">
+            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+            <span>2018 Honda Civic • <span class="text-gray-400 uppercase">def-4567</span></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Create Appointment Modal Overlay (Hidden by default, standard static markup) -->
+  <div class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/40 backdrop-blur-sm hidden">
+    <!-- Modal Content -->
+    <div class="bg-white w-full max-w-2xl rounded-2xl shadow-xl overflow-hidden m-4">
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+        <h2 class="text-lg font-bold text-gray-800">Create New Appointment</h2>
+        <button class="text-gray-400 hover:text-gray-600 transition p-1 bg-gray-50 hover:bg-gray-100 rounded-lg">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- Modal Body (Form) -->
+      <div class="p-6">
+        <form class="space-y-5">
+           <div class="grid grid-cols-2 gap-5">
+             <!-- Customer Select -->
+             <div>
+               <label class="block text-xs font-bold text-gray-600 mb-1.5">Customer</label>
+               <select class="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition appearance-none cursor-pointer">
+                 <option value="">Select a customer...</option>
+                 <option value="1">Michael Ross</option>
+                 <option value="2">Sarah Jenkins</option>
+                 <option value="3">David Miller</option>
+               </select>
+             </div>
+
+             <!-- Vehicle Select -->
+             <div>
+               <label class="block text-xs font-bold text-gray-600 mb-1.5">Vehicle</label>
+               <select class="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition appearance-none cursor-pointer" disabled>
+                 <option value="">Select vehicle...</option>
+                 <!-- Options populated based on customer -->
+               </select>
+             </div>
+           </div>
+
+           <div>
+             <label class="block text-xs font-bold text-gray-600 mb-1.5">Service Type</label>
+             <input type="text" placeholder="e.g. Standard Maintenance, Oil Change" class="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition">
+           </div>
+
+           <div class="grid grid-cols-2 gap-5">
+             <!-- Start Datetime -->
+             <div>
+               <label class="block text-xs font-bold text-gray-600 mb-1.5">Start Date & Time</label>
+               <input type="datetime-local" class="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition cursor-pointer">
+             </div>
+
+             <!-- End Datetime -->
+             <div>
+               <label class="block text-xs font-bold text-gray-600 mb-1.5">End Date & Time</label>
+               <input type="datetime-local" class="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition cursor-pointer">
+             </div>
+           </div>
+
+           <!-- Technician -->
+           <div>
+             <label class="block text-xs font-bold text-gray-600 mb-1.5">Assigned Technician</label>
+             <select class="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition appearance-none cursor-pointer">
+               <option value="">Assign a technician...</option>
+               <option value="1">Chris Evans (Mech. Lead)</option>
+               <option value="2">Mark Ruffalo (Diagnosis)</option>
+             </select>
+           </div>
+
+           <!-- Notes -->
+           <div>
+             <label class="block text-xs font-bold text-gray-600 mb-1.5">Additional Notes</label>
+             <textarea rows="3" placeholder="Any special requests or details offere..." class="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition"></textarea>
+           </div>
+        </form>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex items-center justify-end gap-3 rounded-b-2xl">
+        <button type="button" class="px-5 py-2.5 text-sm font-bold text-gray-600 hover:text-gray-800 hover:bg-gray-200 rounded-xl transition">Cancel</button>
+        <button type="button" class="px-5 py-2.5 bg-green-500 hover:bg-green-600 text-white rounded-xl text-sm font-bold shadow-[0_4px_10px_0_rgba(34,197,94,0.3)] transition">Save Appointment</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
