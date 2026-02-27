@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoices</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#f8f9fa] text-gray-800 font-sans min-h-screen flex selection:bg-green-200">
+
+  <!-- Left Sidebar -->
+  <aside class="w-64 bg-white px-5 py-8 flex flex-col h-screen overflow-y-auto shrink-0 border-r border-gray-100 hidden md:flex">
+    <!-- Logo -->
+    <div class="mb-10 px-2">
+      <div class="text-xl font-bold italic flex items-center mb-2">
+        <div class="bg-gray-800 text-green-400 px-3 py-1 font-black">Karr</div>
+        <div class="bg-green-500 text-white px-3 py-1 font-black">Kraft</div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex-1 space-y-3">
+      <a href="index.html" class="flex items-center gap-4 text-gray-500 hover:bg-gray-50 px-4 py-3 rounded-xl font-medium transition-colors border border-transparent hover:border-gray-100">
+        <!-- Dashboard Icon -->
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+        Dashboard
+      </a>
+      <a href="#" class="flex items-center gap-4 text-gray-500 hover:bg-gray-50 px-4 py-3 rounded-xl font-medium transition-colors border border-transparent hover:border-gray-100">
+        <!-- Repair Tracker Icon -->
+        <svg class="w-5 h-5 text-gray-400 group-hover:text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+        Repair Tracker
+      </a>
+      <a href="#" class="flex items-center gap-4 text-gray-500 hover:bg-gray-50 px-4 py-3 rounded-xl font-medium transition-colors border border-transparent hover:border-gray-100">
+        <!-- Customers Icon -->
+        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+        Customers
+      </a>
+      <!-- Active Invoices Nav -->
+      <a href="#" class="flex items-center gap-4 bg-green-500 text-white px-4 py-3 rounded-xl font-semibold shadow-lg shadow-green-500/30">
+        <svg class="w-5 h-5 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+        Invoices
+      </a>
+      <a href="#" class="flex items-center gap-4 text-gray-500 hover:bg-gray-50 px-4 py-3 rounded-xl font-medium transition-colors border border-transparent hover:border-gray-100">
+        <!-- Settings Icon -->
+        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+        Settings
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="flex-1 overflow-y-auto px-4 md:px-8 py-8 h-screen border-l border-gray-100 flex flex-col">
+    <!-- Top Navigation Row -->
+    <header class="flex items-center justify-between mb-8 shrink-0">
+      <div>
+        <h1 class="text-2xl font-bold text-gray-800">Invoices</h1>
+        <p class="text-sm text-gray-400 mt-1">Manage billing and view recent invoices</p>
+      </div>
+
+      <!-- Right Header Items -->
+      <div class="flex items-center gap-4 sm:gap-6">
+        <button class="bg-green-500 hover:bg-green-600 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-md shadow-green-500/30 transition hidden sm:inline-block">
+          + New Invoice
+        </button>
+        <div class="flex items-center gap-3 pl-0 sm:pl-4 sm:border-l border-gray-200">
+          <img src="https://i.pravatar.cc/150?u=johndoe" alt="User Avatar" class="w-10 h-10 rounded-full object-cover">
+          <div class="hidden sm:block">
+            <p class="text-sm font-bold text-gray-800">John Doe</p>
+            <p class="text-xs text-gray-400">Owner</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Two Column Grid for Invoices Module -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 flex-1 min-h-0">
+      
+      <!-- Left List: Recent Invoices Table (span 5) -->
+      <div class="lg:col-span-4 xl:col-span-5 bg-white rounded-2xl p-6 shadow-sm shadow-gray-200 flex flex-col h-full">
+        <!-- Table Header & Actions -->
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-lg font-bold text-gray-800">Recent Invoices</h3>
+          <button class="text-gray-400 hover:text-gray-600 bg-gray-50 p-2 rounded-lg border border-gray-100 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path></svg>
+          </button>
+        </div>
+        
+        <!-- Table Area constraints & scroll -->
+        <div class="w-full overflow-x-auto flex-1 h-0 overflow-y-auto">
+          <table class="w-full text-left text-sm whitespace-nowrap">
+            <thead class="sticky top-0 bg-white shadow-[0_1px_0_0_#f3f4f6]">
+              <tr class="text-gray-400 font-medium">
+                <th class="py-3 px-2 font-semibold">Invoice #</th>
+                <th class="py-3 px-2 font-semibold">Customer</th>
+                <th class="py-3 px-2 font-semibold">Due Date</th>
+                <th class="py-3 px-2 font-semibold">Status</th>
+                <th class="py-3 px-2 font-semibold text-right">Total</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-600 divide-y divide-gray-50">
+              <!-- Active/Selected Row -->
+              <tr class="hover:bg-green-50/80 bg-green-50/50 cursor-pointer transition border-l-4 border-green-500">
+                <td class="py-4 px-2 font-bold text-gray-900 pl-4">INV-0045</td>
+                <td class="py-4 px-2 font-bold text-gray-800">Devon Lane</td>
+                <td class="py-4 px-2 text-gray-500">Oct 24, 2023</td>
+                <td class="py-4 px-2">
+                  <span class="inline-block px-2.5 py-1 bg-yellow-100 text-yellow-600 rounded-lg text-[11px] font-bold uppercase tracking-wider">Draft</span>
+                </td>
+                <td class="py-4 px-2 text-right font-black text-gray-900 pr-4">$449.35</td>
+              </tr>
+              <!-- Iterated Default Rows -->
+              <tr class="hover:bg-gray-50 cursor-pointer transition border-l-4 border-transparent">
+                <td class="py-4 px-2 font-bold text-gray-600 pl-4">INV-0044</td>
+                <td class="py-4 px-2 font-semibold text-gray-800">Jenny Wilson</td>
+                <td class="py-4 px-2 text-gray-500">Oct 20, 2023</td>
+                <td class="py-4 px-2">
+                  <span class="inline-block px-2.5 py-1 bg-green-100 text-green-600 rounded-lg text-[11px] font-bold uppercase tracking-wider">Paid</span>
+                </td>
+                <td class="py-4 px-2 text-right font-bold text-gray-600 pr-4">$1,250.00</td>
+              </tr>
+              <tr class="hover:bg-gray-50 cursor-pointer transition border-l-4 border-transparent">
+                <td class="py-4 px-2 font-bold text-gray-600 pl-4">INV-0043</td>
+                <td class="py-4 px-2 font-semibold text-gray-800">Robert Fox</td>
+                <td class="py-4 px-2 text-red-500 font-medium">Oct 15, 2023</td>
+                <td class="py-4 px-2">
+                  <span class="inline-block px-2.5 py-1 bg-blue-100 text-blue-600 rounded-lg text-[11px] font-bold uppercase tracking-wider">Sent</span>
+                </td>
+                <td class="py-4 px-2 text-right font-bold text-gray-600 pr-4">$85.00</td>
+              </tr>
+              <tr class="hover:bg-gray-50 cursor-pointer transition border-l-4 border-transparent">
+                <td class="py-4 px-2 font-bold text-gray-600 pl-4">INV-0042</td>
+                <td class="py-4 px-2 font-semibold text-gray-800">Cody Fisher</td>
+                <td class="py-4 px-2 text-gray-500">Oct 10, 2023</td>
+                <td class="py-4 px-2">
+                  <span class="inline-block px-2.5 py-1 bg-gray-100 text-gray-500 rounded-lg text-[11px] font-bold uppercase tracking-wider">Void</span>
+                </td>
+                <td class="py-4 px-2 text-right font-bold text-gray-600 pr-4">$320.00</td>
+              </tr>
+              <tr class="hover:bg-gray-50 cursor-pointer transition border-l-4 border-transparent">
+                <td class="py-4 px-2 font-bold text-gray-600 pl-4">INV-0041</td>
+                <td class="py-4 px-2 font-semibold text-gray-800">Wade Warren</td>
+                <td class="py-4 px-2 text-gray-500">Oct 05, 2023</td>
+                <td class="py-4 px-2">
+                  <span class="inline-block px-2.5 py-1 bg-green-100 text-green-600 rounded-lg text-[11px] font-bold uppercase tracking-wider">Paid</span>
+                </td>
+                <td class="py-4 px-2 text-right font-bold text-gray-600 pr-4">$945.50</td>
+              </tr>
+              <tr class="hover:bg-gray-50 cursor-pointer transition border-l-4 border-transparent">
+                <td class="py-4 px-2 font-bold text-gray-600 pl-4">INV-0040</td>
+                <td class="py-4 px-2 font-semibold text-gray-800">Annette Black</td>
+                <td class="py-4 px-2 text-gray-500">Oct 01, 2023</td>
+                <td class="py-4 px-2">
+                  <span class="inline-block px-2.5 py-1 bg-green-100 text-green-600 rounded-lg text-[11px] font-bold uppercase tracking-wider">Paid</span>
+                </td>
+                <td class="py-4 px-2 text-right font-bold text-gray-600 pr-4">$2,100.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Right Panel: Preview Area (span 7) -->
+      <div class="lg:col-span-8 xl:col-span-7 flex flex-col gap-6 h-full overflow-y-auto">
+        
+        <!-- Preview Actions Header -->
+        <div class="flex items-center justify-between bg-white rounded-2xl p-4 shadow-sm shadow-gray-200 shrink-0">
+          <div class="px-2">
+             <p class="font-bold text-gray-800 text-lg">INV-0045 <span class="text-sm font-medium text-gray-400 ml-2">Preview</span></p>
+          </div>
+          <div class="flex items-center gap-3">
+            <button class="flex items-center gap-2 border border-gray-200 bg-white hover:bg-gray-50 text-gray-600 px-4 py-2 rounded-xl text-sm font-semibold transition shadow-sm">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+              Print
+            </button>
+            <button class="flex items-center gap-2 border border-gray-200 bg-white hover:bg-gray-50 text-gray-600 px-4 py-2 rounded-xl text-sm font-semibold transition shadow-sm">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              Email
+            </button>
+            <button class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-xl text-sm font-bold shadow-md shadow-green-500/20 transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Mark Paid
+            </button>
+          </div>
+        </div>
+
+        <!-- Invoice Document Card -->
+        <div class="bg-white rounded-2xl p-8 sm:p-12 shadow-sm shadow-gray-200 relative shrink-0 border border-gray-100">
+          
+          <!-- Status Ribbon/Badge overlay -->
+          <div class="absolute top-10 right-10 opacity-80 pointer-events-none">
+            <span class="inline-block px-4 py-1.5 border-2 border-yellow-500 text-yellow-500 rounded text-xl font-black uppercase tracking-widest transform rotate-12 bg-white/50 backdrop-blur-sm">DRAFT</span>
+          </div>
+
+          <!-- Invoice Header Section -->
+          <div class="flex flex-col sm:flex-row justify-between items-start border-b-2 border-gray-100 pb-8 mb-8 gap-8 sm:gap-0">
+            <div>
+              <!-- Company Branding -->
+              <div class="text-2xl font-bold italic flex items-center mb-5">
+                <div class="bg-gray-800 text-green-400 px-3 py-1 font-black">Karr</div>
+                <div class="bg-green-500 text-white px-3 py-1 font-black">Kraft</div>
+              </div>
+              <div class="text-sm text-gray-500 leading-relaxed font-medium">
+                <p>123 Mechanic Street</p>
+                <p>Auto City, CA 90210</p>
+                <p>(555) 123-4567</p>
+                <p>billing@karrkraft.com</p>
+              </div>
+            </div>
+            
+            <div class="text-left sm:text-right">
+              <h2 class="text-4xl font-black text-gray-900 mb-1 tracking-tight">INVOICE</h2>
+              <p class="text-gray-500 font-bold mb-6 text-lg"># INV-0045</p>
+              
+              <div class="flex flex-col gap-2 text-sm justify-end">
+                <div class="flex sm:justify-end gap-12">
+                  <span class="text-gray-400 font-medium">Issue Date:</span>
+                  <span class="font-bold text-gray-800 text-right w-24">Oct 10, 2023</span>
+                </div>
+                <div class="flex sm:justify-end gap-12">
+                  <span class="text-gray-400 font-medium">Due Date:</span>
+                  <span class="font-bold text-gray-800 text-right w-24">Oct 24, 2023</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bill To Section -->
+          <div class="mb-10">
+            <p class="text-[11px] text-gray-400 font-bold uppercase tracking-widest mb-3">Bill To</p>
+            <h3 class="text-xl font-black text-gray-900">Devon Lane</h3>
+            <div class="text-sm text-gray-500 leading-relaxed font-medium mt-2">
+              <p>456 Customer Ave, Apt 4B</p>
+              <p>Los Angeles, CA 90001</p>
+              <p>devon.lane@example.com</p>
+              <p class="mt-1">(310) 555-0198</p>
+            </div>
+          </div>
+
+          <!-- Invoice Items Area -->
+          <div class="mb-10 overflow-x-auto rounded-xl border border-gray-100">
+            <table class="w-full text-sm text-left">
+              <thead class="bg-gray-50 border-b border-gray-100 text-gray-600 font-bold">
+                <tr>
+                  <th class="py-4 px-6 uppercase text-[11px] tracking-wider">Description</th>
+                  <th class="py-4 px-6 uppercase text-[11px] tracking-wider text-center">Qty</th>
+                  <th class="py-4 px-6 uppercase text-[11px] tracking-wider text-right">Price</th>
+                  <th class="py-4 px-6 uppercase text-[11px] tracking-wider text-right">Total</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-800 divide-y divide-gray-100">
+                <tr class="hover:bg-gray-50/50 transition">
+                  <td class="py-4 px-6 font-semibold text-gray-900">
+                    Brake Pad Replacement (Front)
+                    <p class="text-xs text-gray-400 font-medium mt-0.5">Premium ceramic brake pads</p>
+                  </td>
+                  <td class="py-4 px-6 text-center text-gray-600 font-medium">1</td>
+                  <td class="py-4 px-6 text-right text-gray-600 font-medium">$150.00</td>
+                  <td class="py-4 px-6 text-right font-bold text-gray-900">$150.00</td>
+                </tr>
+                <tr class="hover:bg-gray-50/50 transition">
+                  <td class="py-4 px-6 font-semibold text-gray-900">
+                    Synthetic Oil Change
+                    <p class="text-xs text-gray-400 font-medium mt-0.5">Includes new filter & 5 qts synthetic oil</p>
+                  </td>
+                  <td class="py-4 px-6 text-center text-gray-600 font-medium">1</td>
+                  <td class="py-4 px-6 text-right text-gray-600 font-medium">$80.00</td>
+                  <td class="py-4 px-6 text-right font-bold text-gray-900">$80.00</td>
+                </tr>
+                <tr class="hover:bg-gray-50/50 transition">
+                  <td class="py-4 px-6 font-semibold text-gray-900">
+                    Labor
+                    <p class="text-xs text-gray-400 font-medium mt-0.5">General mechanic labor (hours)</p>
+                  </td>
+                  <td class="py-4 px-6 text-center text-gray-600 font-medium">2</td>
+                  <td class="py-4 px-6 text-right text-gray-600 font-medium">$100.00</td>
+                  <td class="py-4 px-6 text-right font-bold text-gray-900">$200.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Calculation / Totals Block -->
+          <div class="flex flex-col sm:flex-row justify-between items-end gap-8 border-t border-gray-100 pt-8">
+            <div class="w-full sm:w-1/2">
+              <p class="text-xs text-gray-400 font-bold uppercase tracking-widest mb-2">Payment Notes</p>
+              <p class="text-sm text-gray-500 font-medium bg-gray-50 p-4 rounded-xl border border-gray-100">
+                Please make payment within 14 days of receiving this invoice. Bank transfer or credit card accepted via the payment link emailed to you.
+              </p>
+            </div>
+            
+            <div class="w-full sm:w-64 space-y-3">
+              <div class="flex justify-between items-center text-sm font-medium">
+                <span class="text-gray-500">Subtotal</span>
+                <span class="text-gray-900 font-bold">$430.00</span>
+              </div>
+              <div class="flex justify-between items-center text-sm font-medium">
+                <span class="text-gray-500">Tax (4.5%)</span>
+                <span class="text-gray-900 font-bold">$19.35</span>
+              </div>
+              <div class="flex justify-between items-center text-sm font-medium">
+                <span class="text-gray-500">Discount</span>
+                <span class="text-green-500 font-bold">-$0.00</span>
+              </div>
+              <div class="h-px bg-gray-200 my-4"></div>
+              <div class="flex justify-between items-end">
+                <span class="text-gray-800 font-bold uppercase tracking-wider text-sm mb-1">Total Due</span>
+                <span class="text-3xl text-green-500 font-black">$449.35</span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- PDF Preview Placeholder Block -->
+        <div class="mt-4 mb-8">
+          <h4 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4 px-2">PDF Generated Preview</h4>
+          <div class="w-full bg-white border-2 border-dashed border-gray-300 rounded-3xl flex flex-col items-center justify-center relative overflow-hidden h-[400px] hover:bg-gray-50 transition cursor-pointer group">
+            <!-- Simulated stacked paper effect behind -->
+            <div class="absolute inset-0 flex items-center justify-center mt-[-20px]">
+              <div class="w-3/4 h-[300px] bg-white border border-gray-200 shadow-xl rounded-lg scale-95 opacity-50 transform rotate-[-2deg]"></div>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center mt-[-10px]">
+              <div class="w-3/4 h-[300px] bg-white border border-gray-200 shadow-xl rounded-lg scale-95 opacity-80 transform rotate-[1deg]"></div>
+            </div>
+            <!-- Main paper top sheet -->
+            <div class="absolute inset-0 flex justify-center items-center">
+              <div class="w-3/4 h-[300px] bg-white border border-gray-200 shadow-2xl rounded-lg z-10 p-6 flex flex-col gap-3 group-hover:-translate-y-2 transition-transform duration-300">
+                 <!-- abstract pdf skeleton lines -->
+                 <div class="flex justify-between border-b pb-2">
+                   <div class="w-16 h-4 bg-gray-200 rounded"></div>
+                   <div class="w-24 h-6 bg-gray-300 rounded"></div>
+                 </div>
+                 <div class="w-32 h-3 bg-gray-100 rounded mt-4"></div>
+                 <div class="w-48 h-3 bg-gray-100 rounded mb-4"></div>
+                 <div class="w-full h-24 bg-gray-50 border border-gray-100 rounded px-2 py-3 flex gap-2">
+                    <div class="w-full h-full bg-gray-200/50 rounded"></div>
+                 </div>
+                 <div class="flex justify-end mt-4">
+                    <div class="w-24 h-4 bg-green-100 rounded"></div>
+                 </div>
+              </div>
+            </div>
+            <!-- Empty state overlay message -->
+             <div class="absolute inset-x-0 bottom-8 flex flex-col items-center justify-center z-20 pointer-events-none drop-shadow-md">
+               <div class="bg-gray-800 text-white rounded-full px-6 py-3 shadow-xl flex items-center gap-3">
+                 <svg class="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" text-gray-300 stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" text-gray-300 stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                 <span class="font-bold text-sm">Click to view full screen PDF</span>
+               </div>
+             </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</body>
+</html>
